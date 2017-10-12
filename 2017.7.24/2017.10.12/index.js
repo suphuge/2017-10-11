@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 var box = document.getElementById('box');
 addEventListener('mousedown',down);
 function down(ev){
@@ -11,3 +12,6 @@ function move(ev){
 	box.style.top = ev.clientY - disY + 'px';
 >>>>>>> move
 }
+=======
+adfaf
+>>>>>>> up
