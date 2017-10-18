@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        找出下列字符串中数量最多的是谁？有多少个？
+    */
+    // var str = '0d302sa00ud04yy553y210a0udyt27036320190e03029y27';
+    // var min = -Infinity;
+    // var index = '';
+    // str = str.split('').sort().join('');
+
+    // str.replace(/(\w)\1+/g,function($0,$1){
+    //    // console.log($1)
+    //    if(min < $0.length){
+    //      min = $0.length;
+    //      index = $1;
+    //    }
+    // });
+
+    // console.log('最多的是'+index+'，出现了'+min+'次');
+    // console.log(str);
+
+
+ /*************************************************************/   
+    
+    
+    // var json = {};
+    // for(var i=0;i<str.length;i++){
+    //     if(!json[str[i]]){
+    //         json[str[i]] = 1;
+    //     }else{
+    //         json[str[i]] ++;
+    //     }
+    // }
+
+    // var min = -Infinity;
+    // var index = '';
+
+    // for(var attr in json){
+    //     if(json[attr] > min){
+    //         min = json[attr];
+    //         index = attr;
+    //     }
+    // }
+
+    // console.log('最多的是'+index+'，出现了'+min+'次');
+
+
+
+
+
+
+
+// 再次
+    // 方法一
+        //找出下列字符串中数量最多的是谁？有多少个？ 
+         var str = '0d302sa00ud04yy553y210a0udyt27036320190e03029y27';
+         // 定义最小值
+         var min = -Infinity;
+         // 记录出现最多的字符
+         var index = '';
+        // 重新排列字符  以空字符分割成数组在进行排序然后拼接成字符串
+        str = str.split('').sort().join('');
+        // 编写正则
+        var re = /(\w)\1+/g;
+        //用replce 方法检索达到要求
+        str.replace(re,function($0,$1){
+            // 判断
+            if(min < $0.length){
+                // min 为出现次数
+                min = $0.length;
+                // index 为出现最多的字符
+                index = $1;
+            }
+        }) 
+        // console.log(min ,index)
+        var m = -Infinity;
+        // 方法二
+         var string = '0d302sa00ud04yy553y210a0udyt27036320190e03029y27';
+         // 申明对象用来存储内容
+         var json = {};
+         // 循环并存储数组
+         for(var i=0;i<string.length;i++){
+            if (!json[string[i]]) {//当字符在内容中不存在时
+                // 初始化为1
+                json[string[i]] = 1;
+            }else{//当字符在内容中存在时
+                // 数字+1
+                json[string[i]] ++;
+            }
+         }
+         // 循环json 找出出现次数最多的
+         for(var key in json){
+            // 比较当前m 和json的值
+            if(m<json[key]){
+                // 找出m为最大值
+                m = json[key];
+                var name = key;
+            }
+         }
+         console.log(name,m)
+</script>
+</body>
+</html>

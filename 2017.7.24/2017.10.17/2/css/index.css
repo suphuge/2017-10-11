@@ -1,0 +1,12 @@
+#box1 div,#box2 div{
+	width: 200px;
+	height: 200px;
+	background-color: #f5f5f5;
+	display: none;
+}
+.active{
+	background-color: yellow;
+}
+#box1 .show,#box2 .show{
+	display: block;
+}

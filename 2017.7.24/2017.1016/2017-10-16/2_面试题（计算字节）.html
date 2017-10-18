@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //计算下面字符串中的字节总数是多少，假设一个汉字为2个字节，字母为1个字节
+    // [\u4e00-\u9fa5] 中文的区间范围
+    
+
+     var str = 'hello!欢迎大家来带妙味课程!';
+    // var num = 0;
+    // for(var i=0;i<str.length;i++){
+    //     if(/[\u4e00-\u9fa5]/.test(str[i])){
+    //         num += 2;
+    //     }else{
+    //         num ++;
+    //     }
+    // }
+    // console.log(num);
+
+
+
+
+
+
+
+
+
+
+// 再次
+    // 中文的数字范围为  [\u4e00-\u9fa5]
+    // 记录当前数字
+    var num = 0;
+    // 遍历每一位
+    for(var i=0;i<str.length;i++){
+        if(/[\u4e00-\u9fa5]/.test(str)){//匹配中文
+            num += 2;
+        }else{//不是中文的
+            num ++;
+        }
+        // 是中文的+2，不是中文的+1；
+    }
+    console.log(num)
+
+</script>
+</body>
+</html>
